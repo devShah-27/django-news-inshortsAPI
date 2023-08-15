@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .thumbnail {
+            height: 450px;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .thumbnail p {
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .thumbnail h3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav .active a {
+            color: black;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'index' %}">News</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}"><a href="{% url 'index' %}">All News</a></li>
+                <li class="{% if request.resolver_match.url_name == 'top' %}active{% endif %}"><a href="{% url 'top' %}">Top News</a></li>
+                <li class="{% if request.resolver_match.url_name == 'trending' %}active{% endif %}"><a href="{% url 'trending' %}">Trending News</a></li>
+                <li class="{% if request.resolver_match.url_name == 'science' %}active{% endif %}"><a href="{% url 'science' %}">Science News</a></li>
+                <li class="{% if request.resolver_match.url_name == 'entertainment' %}active{% endif %}"><a href="{% url 'entertainment' %}">Entertainment News</a></li>
+                <li class="{% if request.resolver_match.url_name == 'sports' %}active{% endif %}"><a href="{% url 'sports' %}">Sports News</a></li>
+            </ul>
+        </div>
+    </nav>   
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

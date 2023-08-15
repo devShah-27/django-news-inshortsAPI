@@ -1,0 +1,21 @@
+{% extends 'news/base.html' %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+    <h1>News</h1>
+    <div class="row">
+        {% for item in news %}
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="{{ item.imageUrl }}" alt="{{ item.title }}">
+                    <div class="caption">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.content }}</p>
+                        <p><a href="{{ item.sourceUrl }}" class="btn btn-primary" role="button">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
