@@ -1,7 +1,7 @@
 Django News Website
 ===================
 
-This is a Django website that displays news from the inShorts API. The website includes pages for different news categories, including top news, trending news, science news, entertainment news, and sports news. Each page displays a grid of 9 news stories, with an image, title, and description for each story.
+This is a Django website that displays news from the inShorts API. The website includes pages for different news categories, including top news, trending news, science news, entertainment news, and sports news. Each page displays a grid of 9 news stories, with an image, title, and description for each story. You can go through below features & enjoy it!!
 
 Features
 --------
